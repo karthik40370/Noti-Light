@@ -15,3 +15,6 @@ Here I will explain you how to install a chrome extension in your chrome browser
 > Select your folder where you downloaded your extension.
 
 > Ta-Da you are done now.. Your extension will be ready to use. 
+
+
+Please feel free to raise an issue if you find any difficulty in this 
