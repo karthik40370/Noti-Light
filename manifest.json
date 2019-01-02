@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "NotiLight",
+  "version": "1.0.0",
+  "description": "Show notifications as webcam LED.",
+  "icons": {
+    "256": "icons/icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "NotiLight"
+  },
+  "author": "Karthik Kanumolu",
+  "background": {
+    "scripts": [
+      "js/webcam.min.js",
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://*.quora.com/*",
+        "*://*.twitter.com/*",
+        "*://mail.google.com/*",
+        "*://plus.google.com/*"
+      ],
+      "js": [
+        "js/lib.js",
+        "js/webcam.min.js",
+        "js/script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "icons/icon.png"
+  ],
+  "permissions": [
+    "notifications"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true,
+    "open_in_tab": true
+  }
+}
